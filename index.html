@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <!-- My CSS -->
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/sec1_style.css">
+	<link rel="stylesheet" href="style/sec2_style.css">
+	<link rel="stylesheet" href="style/sec3_style.css">
+	<link rel="stylesheet" href="style/sec4_style.css">
+	<link rel="stylesheet" href="style/navbar.css">
+	<link rel="stylesheet" href="style/footer.css">
+  </head>
+
+  <body>
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+	  <symbol id="icon-pause" viewBox="0 0 1024 1024">
+	    <path d="M349.4 895.937h-63.527q-26.218 0-44.872-18.655t-18.655-44.872v-635.273q0-26.218 18.655-44.872t44.872-18.655h63.527q26.218 0 44.872 18.655t18.655 44.872v635.273q0 26.218-18.655 44.872t-44.872 18.655zM730.564 895.937h-63.527q-26.218 0-44.872-18.655t-18.655-44.872v-635.273q0-26.218 18.655-44.872t44.872-18.655h63.527q26.218 0 44.872 18.655t18.655 44.872v635.273q0 26.218-18.655 44.872t-44.872 18.655z"></path>
+	  </symbol>
+	  <symbol id="icon-play" viewBox="0 0 1024 1024">
+	    <path d="M254.109 185.54v658.97q0 30.755 20.167 40.335t48.402-8.067l521.327-319.653q28.234-17.142 28.234-41.847t-28.234-41.847l-521.327-320.158q-28.234-17.142-48.402-7.815t-20.167 40.083z"></path>
+	  </symbol>
+	</svg>
+
+    <div class="topnav" id="myTopnav">
+
+  <as href="#home" class="active">TOP MUSIC BRAZIL</as>
+
+    <div style="float:right;">
+
+
+  <a href="topMusic.php">Top Geral</a>
+  <a href="topFunk.php">Top Funk</a>
+  <a href="topSertanejo.php">Top Sertanejo</a>
+
+  <a href="javascript:void(0);" class="icon" onclick="responsiveNavBar()">
+    <i class="fa fa-bars"></i>
+  </a>
+  </div>
+</div>
+<!--
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand nav_logo" href="#">TOP MUSIC BRAZIL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top Geral</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top Funk</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Top Sertanejo</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
+-->
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol>
+          <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <div class="header_item" id="header_item_1">
+                    <div class="gradientback">
+                        <div class="header_text" >
+                            <div class="number_bar" >
+                                <small>#</small><span class="number_rnk" id="json_header_number_1" ></span>
+                            </div>
+                            <div class="top_bar" id="json_header_top_1"></div>
+                            <div class="name_bar" id="json_header_info_1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="header_item" id="header_item_2">
+                    <div class="gradientback">
+                        <div class="header_text" >
+                            <div class="number_bar " >
+                                <small>#</small><span class="number_rnk" id="json_header_number_2" ></span>
+                            </div>
+                            <div class="top_bar inset-text" id="json_header_top_2"></div>
+                            <div class="name_bar" id="json_header_info_2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="header_item" id="header_item_3">
+                    <div class="gradientback">
+                        <div class="header_text" >
+                            <div class="number_bar" >
+                                <small>#</small><span class="number_rnk" id="json_header_number_3" ></span>
+                            </div>
+                            <div class="top_bar" id="json_header_top_3"></div>
+                            <div class="name_bar" id="json_header_info_3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="header_item" id="header_item_4">
+                    <div class="gradientback">
+                        <div class="header_text" >
+                            <div class="number_bar" >
+                                <small>#</small><span class="number_rnk" id="json_header_number_4" ></span>
+                            </div>
+                            <div class="top_bar" id="json_header_top_4"></div>
+                            <div class="name_bar" id="json_header_info_4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="header_item" id="header_item_5">
+                    <div class="gradientback">
+                        <div class="header_text" >
+                            <div class="number_bar" >
+                                <small>#</small><span class="number_rnk" id="json_header_number_5" ></span>
+                            </div>
+                            <div class="top_bar" id="json_header_top_5"></div>
+                            <div class="name_bar" id="json_header_info_5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </header>
+
+
+    <section name="2" class="sec2">
+      <div class="container ">
+        <div class="row no-gutters align-items-center ">  <!-- //.no-gutters = no padding -->
+          <div class="col-sm-8 col-md-6 ">
+            <h1 class="display-3 animated slideInUp">O que é o TOP Music?</h1>
+            <p>O Top Music Brazil é um rank de músicas a partir de um algoritmo próprio que leva em consideração a reprodução, popularidade, aceitação e vendas entre diferentes gêneros musicais no período de uma semana.</p>
+            <h2>Como o TOP é formado:</h2>
+            <div class="row text-center center">
+                <div class="col-4 col-sm-4 order-sm-1">
+                    <img id="" class="img_explanation " src="img/img_explanation_1.png"></img>
+                </div>
+                <div class="col-8 col-sm-4 order-sm-4">
+                    <p>Reprodução em plataformas streaming</p>
+                </div>
+                <div class="col-4 col-sm-4 order-sm-2">
+                    <img id="" class="img_explanation" src="img/img_explanation_2.png"></img>
+                </div>
+                <div class="col-8 col-sm-4 order-sm-5">
+                    <p>Popularidade acumulada</p>
+                </div>
+                <div class="col-4 col-sm-4 order-sm-3">
+                    <img id="" class="img_explanation" src="img/img_explanation_3.png"></img>
+                </div>
+                <div class="col-8 col-sm-4 order-sm-6">
+                    <p>Reações e sentimentos da audiência</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <div class="container">
+			  <div class="row no-gutters">
+			    <div class="col-6 col-sm-12 col-md-6">
+					<div id="album-slot_1" onclick="playTrack(this)" class="album-slot " data-id=1>
+						<svg class="icon icon-playm"><use xlink:href="#icon-play"></use></svg>
+						<svg class="icon icon-pausem"><use xlink:href="#icon-pause"></use></svg>
+		 		        <img id="json_img_1" class="img-fluid imgBorder" src="img/audio_track_default.png"></img>
+		 		        <audio id="json_audio_1" class="audio d-none" controls=""></audio>
+		 		    </div>
+				</div>
+			    <div class="col-6 col-sm-12 col-md-6">
+					<div id="album-slot_2" onclick="playTrack(this)" class="album-slot" data-id=2>
+						<svg class="icon icon-playm"><use xlink:href="#icon-play"></use></svg>
+						<svg class="icon icon-pausem"><use xlink:href="#icon-pause"></use></svg>
+		 		        <img id="json_img_2" class="img-fluid imgBorder" src="img/audio_track_default.png"></img>
+		 		        <audio id="json_audio_2" class="audio d-none" controls=""></audio>
+		 		    </div>
+				</div>
+			  <div class="w-100"></div> <!-- break line for 4 columns to look like a box -->
+			    <div class="col-6 col-sm-12 col-md-6">
+                    <div  id="album-slot_3"  onclick="playTrack(this)" class="album-slot " data-id=3>
+						<svg class="icon icon-playm"><use xlink:href="#icon-play"></use></svg>
+						<svg class="icon icon-pausem"><use xlink:href="#icon-pause"></use></svg>
+		 		        <img id="json_img_3" class="img-fluid imgBorder" src="img/audio_track_default.png"></img>
+		 		        <audio id="json_audio_3" class="audio d-none" controls=""></audio>
+		 		    </div>
+                </div>
+			    <div class="d-block d-sm-none d-md-block col-6 col-md-6">
+                    <div id="album-slot_4" onclick="playTrack(this)" class="album-slot " data-id=4>
+						<svg class="icon icon-playm"><use xlink:href="#icon-play"></use></svg>
+						<svg class="icon icon-pausem"><use xlink:href="#icon-pause"></use></svg>
+		 		        <img id="json_img_4" class="img-fluid imgBorder" src="img/audio_track_default.png"></img>
+		 		        <audio id="json_audio_4" class="audio d-none" controls=""></audio>
+		 		    </div>
+                </div>
+			  </div>
+			</div>
+          </div>
+        </div>
+        <hr>
+      </div>
+  	</section>
+
+    <section name="3">
+        <div id="features">
+			<nav>
+                <div class="row no-gutters">
+                    <div class="col-sm-4">
+    					<a class="column is-selected" data-id="top-geral" href="#">
+    						<h1>GERAL
+    							<br/>
+    							60
+    						</h1>
+    					</a>
+                    </div>
+
+                    <div class="col-sm-4">
+    					<a class="column" href="#" data-id="top-funk">
+    						<h1>FUNK
+    							<br/>
+    							40
+    						</h1>
+    					</a>
+                    </div>
+
+                    <div class="col-sm-4">
+    					<a class="column" href="#" data-id="top-sertanejo">
+    						<h1>SERTA
+    							<br/>
+    							40
+    						</h1>
+    					</a>
+                    </div>
+				</div>
+			</nav>
+			<article>
+                <section class="is-selected" id="top-geral" data-id="top-geral">
+                    <div class="container-fluid w-100 no-gutters">
+                        <div class="row text-center bg-black">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                              		<div class="col-sm-6 text-center text-sm-right">
+                              			<h2>
+                              			 Geral 60 desta semana:
+                              			</h2>
+                              		</div>
+                              		<div class="col-sm-6 text-center text-sm-left">
+                              			<p>
+                              				<iframe src="https://open.spotify.com/embed?uri=spotify:user:pedrovnascimento:playlist:7cUCZgiK8GBhUYM07idkju" width="270" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                              			</p>
+                              		</div>
+                          	    </div>
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 my-auto"></div>
+                                    <div class="col-4 col-sm-3 my-auto"></img></div>
+                                    <div class="col-7 col-sm-4 my-auto"></div>
+                                    <div class="col-sm-2 hide-small my-auto">Semana</br>Passada</div>
+                                    <div class="col-sm-2 hide-small my-auto ">Melhor</br>Posição</div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-1 col-sm-1 my-auto">1</div>
+                                    <div class="col-4 col-sm-3 my-auto"><img id="json_table_geral_img_1" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+                                    <div class="col-7 col-sm-4 my-auto" id="json_table_geral_title_1"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_sem_pass_1"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_melhor_pos_1"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row text-center bg-dark">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 my-auto">2</div>
+                                    <div class="col-4 col-sm-3 my-auto"><img id="json_table_geral_img_2" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+                                    <div class="col-7 col-sm-4 my-auto" id="json_table_geral_title_2"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_sem_pass_2"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_melhor_pos_2"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row text-center bg-black">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 my-auto">3</div>
+                                    <div class="col-4 col-sm-3 my-auto"><img id="json_table_geral_img_3" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+                                    <div class="col-7 col-sm-4 my-auto" id="json_table_geral_title_3"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_sem_pass_3"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_melhor_pos_3"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row text-center bg-dark">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 my-auto">4</div>
+                                    <div class="col-4 col-sm-3 my-auto"><img id="json_table_geral_img_4" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+                                    <div class="col-7 col-sm-4 my-auto" id="json_table_geral_title_4"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_sem_pass_4"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_melhor_pos_4"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row text-center bg-black">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 my-auto">5</div>
+                                    <div class="col-4 col-sm-3 my-auto"><img id="json_table_geral_img_5" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+                                    <div class="col-7 col-sm-4 my-auto" id="json_table_geral_title_5"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_sem_pass_5"></div>
+                                    <div class="col-sm-2 hide-small my-auto" id="json_table_geral_melhor_pos_5"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <button class="btn btn-large">Top Completo</button>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+
+
+                </section>
+                <section class=" center w-70" data-id="top-funk">
+
+				</section>
+
+				<section class="center w-80" id="top-sertanejo" data-id="top-sertanejo">
+
+				</section>
+			</article>
+		</div>
+    </section>
+
+    <section name=4 class="sec4">
+        <div class="h-100 w-100 container">
+            <div class="row">
+                <div class="col-md-6 videoBorder ">
+                    <div class="embed-responsive embed-responsive-16by9 ">
+                      <iframe class="embed-responsive-item"  frameborder="0" src="https://www.youtube.com/embed/videoseries?list=UUuyE9DQwn96etBujhsknQUA&showinfo=0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 descBorder"> Acompanhe semanalmente o desempenho das musicas mais populares do Brasil
+                    através do nosso canal no YouTube.
+
+                    <script src="https://apis.google.com/js/platform.js"></script>
+
+
+
+                    <div class="topBorder">
+                        <button class="btn btn-large" href="https://www.youtube.com/channel/UCuyE9DQwn96etBujhsknQUA">Inscreva-se</button>
+                        <h1>Top Funk Brasil</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo"><a href="#"> TOP MUSIC BRAZIL </a></h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>-</h5>
+                    <ul>
+                        <li><a href="#">-</a></li>
+                        <li><a href="#">-</a></li>
+                        <li><a href="#">-</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>--</h5>
+                    <ul>
+                        <li><a href="#">- -</a></li>
+                        <li><a href="#">- -</a></li>
+                        <li><a href="#">-</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>-</h5>
+                    <ul>
+                        <li><a href="#">-</a></li>
+                        <li><a href="#">- -</a></li>
+                        <li><a href="#">-</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contato</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 Pedro Nascimento </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+    <!-- carousel touchscreen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js" > </script>
+    <!-- My JavaScript -->
+    <script type="text/javascript" src="js/scripts.js"z></script>
+
+
+    <!-- data feed -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+</html>
+<!-- \
+<div class="g-ytsubscribe " data-channelid="UCuyE9DQwn96etBujhsknQUA" data-layout="default" data-count="hidden"></div>
+-->

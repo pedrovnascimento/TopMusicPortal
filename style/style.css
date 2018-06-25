@@ -1,0 +1,30 @@
+.navbar{
+	margin: 0;
+	padding: 0;
+
+    color: red;
+}
+.nav_logo{
+	background-color: orange;
+
+}
+
+.navbar li {
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+
+    letter-spacing: 0.6px;
+    word-spacing: 5.4px;
+    color: white;
+    text-decoration: overline solid rgb(0, 0, 0);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+
+.imgBorder{
+	border-radius: 7px 7px 7px 7px;
+//-moz-border-radius: 14px 14px 14px 14px;
+//-webkit-border-radius: 14px 14px 14px 14px;
+border: 0.5vw solid white;
+}

@@ -1,0 +1,78 @@
+.sec2{
+    background-color: white;
+}
+.img_explanation {
+  min-width: 80px;
+  max-width: 90px;
+  width: 8vw;
+  height: auto;
+}
+
+.sec2 img:hover{
+
+}
+
+.album-slot{
+    position:relative;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+.album-slot{
+}
+
+.album-slot:hover {
+
+    opacity: 0.8;
+    transition-timing-function: ease-out;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+
+
+}
+
+
+.div-playing img{
+     filter: brightness(30%) blur(3px);
+     transition: .4s ease-in-out;
+ }
+
+.icon-playm, .icon-pausem {
+z-index: 99;
+  display: none;
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  border: 10px solid white;
+  border-radius: 500px;
+  padding: 10px;
+  fill: white;
+}
+
+.album-slot:hover .icon-playm {
+
+  display: block;
+}
+
+.div-playing .icon-pausem {
+
+  display: block;
+}
+
+.div-playing:hover .icon-playm {
+  display: none;
+}
+
+.center{
+    display: flex;
+	align-items: center;
+}
+
+.center img{
+    padding-top: 2vh;
+    margin-bottom: 2vh;
+
+}
