@@ -34,21 +34,17 @@
 	</svg>
 
     <div class="topnav" id="myTopnav">
+        <as href="#home" class="active">TOP MUSIC BRAZIL</as>
+        <div style="float:right;">
+            <a href="top.html">Top Geral</a>
+            <a href="topFunk.php">Top Funk</a>
+            <a href="topSertanejo.php">Top Sertanejo</a>
 
-  <as href="#home" class="active">TOP MUSIC BRAZIL</as>
-
-    <div style="float:right;">
-
-
-  <a href="topMusic.php">Top Geral</a>
-  <a href="topFunk.php">Top Funk</a>
-  <a href="topSertanejo.php">Top Sertanejo</a>
-
-  <a href="javascript:void(0);" class="icon" onclick="responsiveNavBar()">
-    <i class="fa fa-bars"></i>
-  </a>
-  </div>
-</div>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveNavBar()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
 <!--
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand nav_logo" href="#">TOP MUSIC BRAZIL</a>
@@ -160,7 +156,6 @@
         </div>
     </header>
 
-
     <section name="2" class="sec2">
       <div class="container ">
         <div class="row no-gutters align-items-center ">  <!-- //.no-gutters = no padding -->
@@ -232,22 +227,18 @@
         <hr>
       </div>
   	</section>
-
-    <section name="3">
+    <section name="sec_3">
         <div id="features">
 			<nav>
                 <div class="row no-gutters">
-                    <div class="col-sm-4">
-    					<a class="column is-selected" data-id="top-geral" href="#">
-    						<h1>GERAL
-    							<br/>
-    							60
-    						</h1>
+                    <div class="col-4">
+    					<a class="column is-selected" data-id="top-geral" onclick="scrollToAnchor('features')" href="#features">
+    						<h1>GERAL<br/>60</h1>
     					</a>
                     </div>
 
-                    <div class="col-sm-4">
-    					<a class="column" href="#" data-id="top-funk">
+                    <div class="col-4">
+    					<a class="column" href="#json_audio_1" onclick="scrollToAnchor('features')" data-id="top-funk">
     						<h1>FUNK
     							<br/>
     							40
@@ -255,8 +246,8 @@
     					</a>
                     </div>
 
-                    <div class="col-sm-4">
-    					<a class="column" href="#" data-id="top-sertanejo">
+                    <div class="col-4">
+    					<a class="column" href="" onclick="scrollToAnchor('features')" data-id="top-sertanejo">
     						<h1>SERTA
     							<br/>
     							40
@@ -267,12 +258,12 @@
 			</nav>
 			<article>
                 <section class="is-selected" id="top-geral" data-id="top-geral">
-                    <div class="container-fluid w-100 no-gutters">
+                    <div class="container-fluid w-100 no-gutters text-secondary">
                         <div class="row text-center bg-black">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
                                 <div class="row">
-                              		<div class="col-sm-6 text-center text-sm-right">
+                              		<div class="col-sm-6 text-center text-sm-right text-white">
                               			<h2>
                               			 Geral 60 desta semana:
                               			</h2>
@@ -287,8 +278,8 @@
                                     <div class="col-1 col-sm-1 my-auto"></div>
                                     <div class="col-4 col-sm-3 my-auto"></img></div>
                                     <div class="col-7 col-sm-4 my-auto"></div>
-                                    <div class="col-sm-2 hide-small my-auto">Semana</br>Passada</div>
-                                    <div class="col-sm-2 hide-small my-auto ">Melhor</br>Posição</div>
+                                    <div class="col-sm-2 hide-small my-auto text-white"><strong>Semana</br>Passada</strong></div>
+                                    <div class="col-sm-2 hide-small my-auto text-white"><strong>Melhor</br>Posição</strong></div>
                                 </div>
                                 <div class="row text-center">
                                     <div class="col-1 col-sm-1 my-auto">1</div>
@@ -382,8 +373,8 @@
                       <iframe class="embed-responsive-item"  frameborder="0" src="https://www.youtube.com/embed/videoseries?list=UUuyE9DQwn96etBujhsknQUA&showinfo=0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="col-md-6 descBorder"> Acompanhe semanalmente o desempenho das musicas mais populares do Brasil
-                    através do nosso canal no YouTube.
+                <div class="col-md-6 descBorder"> <h4>Acompanhe semanalmente o desempenho das musicas mais populares do Brasil
+                    através do nosso canal no YouTube.</h4>
 
                     <script src="https://apis.google.com/js/platform.js"></script>
 

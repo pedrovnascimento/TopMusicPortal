@@ -81,12 +81,12 @@ $(document).scroll(function() {
 	if($(window).width() >= 576 ){
 		if($(window).scrollTop() === 0) {
 			 $(".topnav").fadeTo("slow", 1);
-			 console.log("asa");
+			 //console.log("asa");
 			 fade = true;
 		}
 		else if(fade) {
 			 $(".topnav").fadeTo("fast", 0.7);
-			 console.log("z");
+			 //console.log("z");
 			 fade = false;
 		}
 
@@ -132,3 +132,12 @@ $(".carousel").swipe({
   allowPageScroll:"vertical"
 
 });
+
+
+
+//sec 3
+
+function scrollToAnchor(id){
+	var tag = $("#" + id);
+    $('html,body').animate({scrollTop: tag.offset().top},'slow');
+}

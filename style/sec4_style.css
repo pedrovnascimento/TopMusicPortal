@@ -24,14 +24,16 @@
 
 }
 .descBorder{
-    min-height: 200px;
+    min-height: 300px;
 
     //background-color: red;
     border-bottom: 4px solid #ffffff;
 
     padding-left: 2vw;
     padding-right: 2vw;
-    padding-top: 2vh;
+    padding-top: 4vh;
+
+    text-shadow: rgba(255,255,255,.1) -1px -1px 1px,rgba(0,0,0,.5) 1px 1px 1px;
 
 }
 @media only screen and (max-width: 576px) { /* XS */
@@ -67,11 +69,18 @@
     text-align: center;
 
     position: absolute;
-    bottom: 0;
+    bottom: 2vh;
+
+	text-transform: uppercase;
+
+    text-shadow: rgba(255,255,255,.1) -1px -1px 1px,rgba(0,0,0,.5) 1px 1px 1px;
+
+    font-weight:bold;
+    letter-spacing:-2pt;
 }
 .topBorder button{
     margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-bottom: 4vh;
 }
 .sec4 .btn {
   font-size: 14px;

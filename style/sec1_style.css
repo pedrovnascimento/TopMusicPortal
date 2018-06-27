@@ -20,27 +20,11 @@ header {
 .header_item{
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.05));
 	height: 100vh;
-	//background-repeat: no-repeat;
     background-position: center;
 	background-size: 110vh;
-	//background-position: center 20vh;
 	background-color: black;
 
 }
-
-
-
-/*
-@media only screen and (max-width: 576px) {
-  .header_item {
-	  height: 100vh;
-  }
-}
-*/
-
-
-
-
 
 .gradientback{
     width:100%;
@@ -86,6 +70,11 @@ header {
 	}
 	  .header_item {
 		  height: 90vh;
+	  	  background-size: 95vh;
+
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background-position: 30% 40%;
 
 	  }
 	  .gradientback {
@@ -96,6 +85,9 @@ header {
 	      background: -ms-linear-gradient(top,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
 	      background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
 	      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089fff1', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	  }
+	  .header_text{
+	  	margin-top: 20vh;
 	  }
 }
 
@@ -119,28 +111,16 @@ header {
 	color: white;
 	text-shadow: -5px 0 orange, 0 1px orange, 1px 0 orange, 0 -1px orange;
 
+    letter-spacing:-0.5vw;
+
 }
 .number_bar small{
 	font-size:10vh;
 	-webkit-text-stroke: 1.5px black;
 }
 .number_rnk{
-	//margin-left: -0.5vw;;
+	//margin-left: -0.5vw;
 }
-
-@media only screen and (max-width: 576px) { /* XS */
-  .number_bar {
-
-  	padding-left: 5%;
-	  font-size: 15vw;
-  }
-  .number_bar small{
-  	font-size:5vh;
-  }
-
-}
-
-
 .top_bar{
 	padding: 2vh;
 	padding-left: 20%;
@@ -150,6 +130,24 @@ header {
 	font-size: 6vh;
 	min-width: 50%;
 }
+@media only screen and (max-width: 576px) { /* XS */
+  .number_bar {
+
+  	padding-left: 5%;
+	  font-size: 15vw;
+  }
+  .number_bar small{
+  	font-size:5vh;
+  }
+  .top_bar{
+  	font-size: 3vh;
+	letter-spacing: 5px;
+  }
+
+}
+
+
+
 .name_bar{
 	padding: 2vh;
 	padding-left: 20%;
@@ -161,6 +159,8 @@ header {
 	display: inline-block;
 	font-size: 4vh;
 	text-transform: none;
+
+	letter-spacing: 5px;
 }
 
 @media only screen and (max-width: 576px) {

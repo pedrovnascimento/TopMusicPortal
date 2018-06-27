@@ -22,8 +22,9 @@
 
   .topnav a:hover {
     background-color: #ddd;
-    color: orange;
+    color: black;
     text-decoration: overline solid orange;
+
   }
 
   .active {
