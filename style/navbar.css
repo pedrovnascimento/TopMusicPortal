@@ -19,6 +19,12 @@
 
     text-transform: uppercase;
   }
+    as:hover {
+       filter: brightness(110%);
+       cursor:pointer;
+    }
+
+
 
   .topnav a:hover {
     background-color: #ddd;
@@ -32,9 +38,11 @@
     color: white;
   }
 
+
   .topnav .icon {
     display: none;
     background-color: black;
+    margin-right: 0;
   }
   .topnav .icon:hover {
     background-color: orange;

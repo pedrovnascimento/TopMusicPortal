@@ -1,4 +1,6 @@
-
+function homePage(){
+	window.location.href = "index.html";
+}
 
 //SECTION 2
 function playTrack(div){
@@ -120,18 +122,16 @@ var fadingIn = false;
 
 
 //sect 1
+function carouselSwipe(){
+	$(".carousel").swipe({
+	  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+	    if (direction == 'left') $(this).carousel('next');
+	    if (direction == 'right') $(this).carousel('prev');
+	  },
+	  allowPageScroll:"vertical"
 
-$(".carousel").swipe({
-
-  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-
-    if (direction == 'left') $(this).carousel('next');
-    if (direction == 'right') $(this).carousel('prev');
-
-  },
-  allowPageScroll:"vertical"
-
-});
+	});
+}
 
 
 

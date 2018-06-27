@@ -78,7 +78,7 @@
     font-weight:bold;
     letter-spacing:-2pt;
 }
-.topBorder button{
+.topBorder a{
     margin-top: 2vh;
     margin-bottom: 4vh;
 }
@@ -97,4 +97,8 @@
   user-select: none;
   text-align: center;
   border: 0;
+}
+
+.sec4 .btn:hover {
+  filter: brightness(180%);
 }

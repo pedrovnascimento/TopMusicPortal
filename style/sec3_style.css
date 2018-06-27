@@ -17,7 +17,7 @@
 
 }
 
-#features img{
+#features .row img{
     margin-top: 4px;
     margin-bottom: 4px;
     max-width: 100px;
@@ -53,7 +53,10 @@ border: 0.3vh solid white;
     text-shadow: rgba(255,255,255,.1) -1px -1px 1px,rgba(0,0,0,.5) 1px 1px 1px;
 }
 
-
+.btn:hover{
+    filter: brightness(120%);
+    color: black;
+}
 #features > nav {
   padding-top: 65px;
   background-color: #141414;
@@ -109,4 +112,17 @@ border: 0.3vh solid white;
 }
 .text-center {
   text-align: center;
+}
+
+.em-breve{
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 80px;
+
+
+}
+
+.em-breve img{
+
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="img/fav.ico.png">
 
     <title>Top Music Brazil</title>
 
@@ -34,11 +34,11 @@
 	</svg>
 
     <div class="topnav" id="myTopnav">
-        <as href="#home" class="active">TOP MUSIC BRAZIL</as>
+        <as onclick="homePage()"  class="active">TOP MUSIC BRAZIL</as>
         <div style="float:right;">
             <a href="top.html">Top Geral</a>
-            <a href="topFunk.php">Top Funk</a>
-            <a href="topSertanejo.php">Top Sertanejo</a>
+            <a href="topFunk.html">Top Funk</a>
+            <a href="#" class="deactivated">Top Sertanejo</a>
 
             <a href="javascript:void(0);" class="icon" onclick="responsiveNavBar()">
                 <i class="fa fa-bars"></i>
@@ -82,7 +82,7 @@
             <div class="carousel-item active">
                 <div class="header_item" id="header_item_1">
                     <div class="gradientback">
-                        <div class="header_text" >
+                        <div class="header_text" id="header_text_1"data-top="geral">
                             <div class="number_bar" >
                                 <small>#</small><span class="number_rnk" id="json_header_number_1" ></span>
                             </div>
@@ -95,7 +95,7 @@
             <div class="carousel-item">
                 <div class="header_item" id="header_item_2">
                     <div class="gradientback">
-                        <div class="header_text" >
+                        <div class="header_text" id="header_text_2" data-top="funk">
                             <div class="number_bar " >
                                 <small>#</small><span class="number_rnk" id="json_header_number_2" ></span>
                             </div>
@@ -108,7 +108,7 @@
             <div class="carousel-item">
                 <div class="header_item" id="header_item_3">
                     <div class="gradientback">
-                        <div class="header_text" >
+                        <div class="header_text" id="header_text_3" data-top="geral">
                             <div class="number_bar" >
                                 <small>#</small><span class="number_rnk" id="json_header_number_3" ></span>
                             </div>
@@ -121,7 +121,7 @@
             <div class="carousel-item">
                 <div class="header_item" id="header_item_4">
                     <div class="gradientback">
-                        <div class="header_text" >
+                        <div class="header_text" id="header_text_4" data-top="funk">
                             <div class="number_bar" >
                                 <small>#</small><span class="number_rnk" id="json_header_number_4" ></span>
                             </div>
@@ -134,7 +134,7 @@
             <div class="carousel-item">
                 <div class="header_item" id="header_item_5">
                     <div class="gradientback">
-                        <div class="header_text" >
+                        <div class="header_text" id="header_text_5" data-top="geral">
                             <div class="number_bar" >
                                 <small>#</small><span class="number_rnk" id="json_header_number_5" ></span>
                             </div>
@@ -156,7 +156,7 @@
         </div>
     </header>
 
-    <section name="2" class="sec2">
+    <section name="2" class="sec2" id="sec2">
       <div class="container ">
         <div class="row no-gutters align-items-center ">  <!-- //.no-gutters = no padding -->
           <div class="col-sm-8 col-md-6 ">
@@ -346,19 +346,113 @@
                         <div class="row">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
-                                <button class="btn btn-large">Top Completo</button>
+                                <a class="btn btn-large" href="top.html">Top Completo</a>
                             </div>
                             <div class="col-sm-2"></div>
                         </div>
                     </div>
-
-
                 </section>
-                <section class=" center w-70" data-id="top-funk">
+                <section class="" data-id="top-funk">
+                    <div class="container-fluid w-100 no-gutters text-secondary">
+            			<div class="row text-center bg-black">
+            				<div class="col-sm-2"></div>
+            				<div class="col-sm-8">
+            					<div class="row">
+            						<div class="col-sm-6 text-center text-sm-right text-white">
+            							<h2>
+            							 Geral 60 desta semana:
+            							</h2>
+            						</div>
+            						<div class="col-sm-6 text-center text-sm-left">
+            							<p>
+            								<iframe src="https://open.spotify.com/embed?uri=spotify:user:pedrovnascimento:playlist:7cUCZgiK8GBhUYM07idkju" width="270" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            							</p>
+            						</div>
+            					</div>
+            					<div class="row">
+            						<div class="col-1 col-sm-1 my-auto"></div>
+            						<div class="col-4 col-sm-3 my-auto"></img></div>
+            						<div class="col-7 col-sm-4 my-auto"></div>
+            						<div class="col-sm-2 hide-small my-auto text-white"><strong>Semana</br>Passada</strong></div>
+            						<div class="col-sm-2 hide-small my-auto text-white"><strong>Melhor</br>Posição</strong></div>
+            					</div>
+            					<div class="row text-center">
+            						<div class="col-1 col-sm-1 my-auto">1</div>
+            						<div class="col-4 col-sm-3 my-auto"><img id="json_table_funk_img_1" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+            						<div class="col-7 col-sm-4 my-auto" id="json_table_funk_title_1"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_sem_pass_1"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_melhor_pos_1"></div>
+            					</div>
+            				</div>
+            				<div class="col-sm-2"></div>
+            			</div>
+            			<div class="row text-center bg-dark">
+            				<div class="col-sm-2"></div>
+            				<div class="col-sm-8">
+            					<div class="row">
+            						<div class="col-1 col-sm-1 my-auto">2</div>
+            						<div class="col-4 col-sm-3 my-auto"><img id="json_table_funk_img_2" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+            						<div class="col-7 col-sm-4 my-auto" id="json_table_funk_title_2"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_sem_pass_2"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_melhor_pos_2"></div>
+            					</div>
+            				</div>
+            				<div class="col-sm-2"></div>
+            			</div>
+            			<div class="row text-center bg-black">
+            				<div class="col-sm-2"></div>
+            				<div class="col-sm-8">
+            					<div class="row">
+            						<div class="col-1 col-sm-1 my-auto">3</div>
+            						<div class="col-4 col-sm-3 my-auto"><img id="json_table_funk_img_3" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+            						<div class="col-7 col-sm-4 my-auto" id="json_table_funk_title_3"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_sem_pass_3"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_melhor_pos_3"></div>
+            					</div>
+            				</div>
+            				<div class="col-sm-2"></div>
+            			</div>
+            			<div class="row text-center bg-dark">
+            				<div class="col-sm-2"></div>
+            				<div class="col-sm-8">
+            					<div class="row">
+            						<div class="col-1 col-sm-1 my-auto">4</div>
+            						<div class="col-4 col-sm-3 my-auto"><img id="json_table_funk_img_4" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+            						<div class="col-7 col-sm-4 my-auto" id="json_table_funk_title_4"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_sem_pass_4"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_melhor_pos_4"></div>
+            					</div>
+            				</div>
+            				<div class="col-sm-2"></div>
+            			</div>
+            			<div class="row text-center bg-black">
+            				<div class="col-sm-2"></div>
+            				<div class="col-sm-8">
+            					<div class="row">
+            						<div class="col-1 col-sm-1 my-auto">5</div>
+            						<div class="col-4 col-sm-3 my-auto"><img id="json_table_funk_img_5" class=" img-fluid imgBorder" src="img/audio_track_default.png"></img></div>
+            						<div class="col-7 col-sm-4 my-auto" id="json_table_funk_title_5"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_sem_pass_5"></div>
+            						<div class="col-sm-2 hide-small my-auto" id="json_table_funk_melhor_pos_5"></div>
+            					</div>
+            				</div>
+            				<div class="col-sm-2"></div>
+            			</div>
+            			<div class="row">
+            				<div class="col-sm-2"></div>
+            				<div class="col-sm-8">
+            					<a href="topFunk.html" class="btn btn-large">Top Completo</a>
+            				</div>
+            				<div class="col-sm-2"></div>
+            			</div>
+            		</div>
 
 				</section>
 
-				<section class="center w-80" id="top-sertanejo" data-id="top-sertanejo">
+				<section class="top-sertanejo text-center" id="top-sertanejo" data-id="top-sertanejo">
+                    <div class="em-breve">
+                        <img width="60%" src="img/breve.png"></img>
+                    </div>
 
 				</section>
 			</article>
@@ -381,7 +475,7 @@
 
 
                     <div class="topBorder">
-                        <button class="btn btn-large" href="https://www.youtube.com/channel/UCuyE9DQwn96etBujhsknQUA">Inscreva-se</button>
+                        <a href="https://www.youtube.com/channel/UCuyE9DQwn96etBujhsknQUA" class="btn btn-large" href="https://www.youtube.com/channel/UCuyE9DQwn96etBujhsknQUA">Inscreva-se</a>
                         <h1>Top Funk Brasil</h1>
                     </div>
 
@@ -398,21 +492,21 @@
                     <h2 class="logo"><a href="#"> TOP MUSIC BRAZIL </a></h2>
                 </div>
                 <div class="col-sm-2">
-                    <h5>-</h5>
+                    <h5>Top Music</h5></br>
                     <ul>
-                        <li><a href="#">-</a></li>
-                        <li><a href="#">-</a></li>
-                        <li><a href="#">-</a></li>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#sec2">Sobre</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2">
-                    <h5>--</h5>
+                    <h5>Nossos Tops</h5></br>
                     <ul>
-                        <li><a href="#">- -</a></li>
-                        <li><a href="#">- -</a></li>
-                        <li><a href="#">-</a></li>
+                        <li><a href="top.html">Geral 60</a></li>
+                        <li><a href="topFunk.html">Funk 40</a></li>
+                        <li><a href="#">Serta 40</a></li>
                     </ul>
                 </div>
+                <!-- Bootstrap core JavaScript
                 <div class="col-sm-2">
                     <h5>-</h5>
                     <ul>
@@ -421,6 +515,7 @@
                         <li><a href="#">-</a></li>
                     </ul>
                 </div>
+                -->
                 <div class="col-sm-3">
                     <div class="social-networks">
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -429,6 +524,7 @@
                     </div>
                     <button type="button" class="btn btn-default">Contato</button>
                 </div>
+
             </div>
         </div>
         <div class="footer-copyright">
@@ -452,6 +548,11 @@
     <!-- data feed -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+
+    <script>
+        frontPage();
+        carouselSwipe()
+    </script>
 
   </body>
 </html>
