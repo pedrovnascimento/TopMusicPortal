@@ -1,5 +1,5 @@
 function homePage(){
-	window.location.href = "index.html";
+	window.location.href = "/TopMusicPortal/";
 }
 
 //SECTION 2
