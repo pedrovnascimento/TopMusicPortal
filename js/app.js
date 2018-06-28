@@ -117,7 +117,12 @@ function updateDataPage(topGeral, topFunk){
 		var track = topGeral[i];
         $('#json_table_geral_img_' + (i + 1)).attr("src", track.img_url);
         $( "#json_table_geral_title_" + (i + 1)).append( track.artist + "</br>" + track.music);
-        $( "#json_table_geral_sem_pass_" + (i + 1)).append( track.lasPos );
+
+        var lp = "-";
+        if(track.lasPos != 0)
+            lp = track.lasPos;
+
+        $( "#json_table_geral_sem_pass_" + (i + 1)).append( lp );
         $( "#json_table_geral_melhor_pos_" + (i + 1)).append( track.bestPos );
 	}
 
@@ -125,7 +130,12 @@ function updateDataPage(topGeral, topFunk){
 		var track = topFunk[i];
         $('#json_table_funk_img_' + (i + 1)).attr("src", track.img_url);
         $( "#json_table_funk_title_" + (i + 1)).append( track.artist + "</br>" + track.music);
-        $( "#json_table_funk_sem_pass_" + (i + 1)).append( track.lasPos );
+
+        var lp = "-";
+        if(track.lasPos != 0)
+            lp = track.lasPos;
+
+        $( "#json_table_funk_sem_pass_" + (i + 1)).append( lp );
         $( "#json_table_funk_melhor_pos_" + (i + 1)).append( track.bestPos );
 	}
 
@@ -237,10 +247,15 @@ function updateTopPage(data, date){
             $('#json_cover_' + (i+1) ).addClass("artCoverVideo");
         }
 
+        var lp = "-";
+        if(track.lasPos != 0)
+            lp = track.lasPos;
+
+
         $( "#json_lw_" + (i + 1)).empty();
-        $( "#json_lw_" + (i + 1)).append( track.lasPos );
+        $( "#json_lw_" + (i + 1)).append( lp );
         $( "#json_bw_" + (i + 1)).empty();
-        $( "#json_bw_" + (i + 1)).append( track.bestPos);
+        $( "#json_bw_" + (i + 1)).append( track.bestPos );
 
      }
 
