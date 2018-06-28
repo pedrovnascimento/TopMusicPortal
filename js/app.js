@@ -18,6 +18,7 @@
 //var topFunkRef = firebase.database().ref("top_funk").limitToLast(1);
 
 
+var _DB_FIRST_KEY_ = "27_2018-06-24";
 
 function frontPage(){
 
@@ -218,6 +219,12 @@ function getStrDate(str){
 function updateTopPage(data, date){
     console.log(date);
     console.log(data);
+
+    if(date == _DB_FIRST_KEY_)
+        document.getElementById("datePrev").style.display = "none";
+    else
+        document.getElementById("datePrev").style.display = "block";
+
     date = getStrDate(date);
 
      for(i = 0; i< data.length; i++){
@@ -251,13 +258,14 @@ function updateTopPage(data, date){
         if(track.lasPos != 0)
             lp = track.lasPos;
 
-
         $( "#json_lw_" + (i + 1)).empty();
         $( "#json_lw_" + (i + 1)).append( lp );
         $( "#json_bw_" + (i + 1)).empty();
         $( "#json_bw_" + (i + 1)).append( track.bestPos );
 
      }
+
+
 
 }
 
