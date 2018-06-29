@@ -18,7 +18,8 @@
 //var topFunkRef = firebase.database().ref("top_funk").limitToLast(1);
 
 
-var _DB_FIRST_KEY_ = "27_2018-06-24";
+var _DB_FIRST_KEY_GERAL_ = "27_2018-06-24";
+var _DB_FIRST_KEY_FUNK_ = "28_2018-06-27";
 
 function frontPage(){
 
@@ -74,7 +75,7 @@ function updateDataPage(topGeral, topFunk){
             var track = topGeral[random];
         }
 
-		$('#header_item_' + i).css("background-image", "url('"+track.img_url+"')");
+
 
 		$( "#json_header_number_" + i ).append( random+1 );
 		$( "#json_header_top_" + i ).append( "Top " + topName);
@@ -90,6 +91,8 @@ function updateDataPage(topGeral, topFunk){
                 window.location.href = "topFunk.html";
 
         });
+
+        $('#header_item_' + i).css("background-image", "url('"+track.img_url+"')");
 	}
 
 
@@ -97,7 +100,9 @@ function updateDataPage(topGeral, topFunk){
 
 	var tracksDisplay = 4;
 
-	for(i = 0; i < 50; i++){
+    var random = Math.floor((Math.random() * 10) + 0);
+
+	for(i = random; i < 40; i++){
 		var track = topGeral[i];
 		if(track.img_url != "null" && track.preview_url != "null"){
 
@@ -216,29 +221,29 @@ function getStrDate(str){
 
 }
 
-function updateTopPage(data, date){
-    console.log(date);
-    console.log(data);
+function updateTopPage(data, date, firstKey){
+    //console.log(date);
+    //console.log(data);
 
-    if(date == _DB_FIRST_KEY_)
+    if(date == firstKey )
         document.getElementById("datePrev").style.display = "none";
     else
         document.getElementById("datePrev").style.display = "block";
 
     date = getStrDate(date);
+    $( "#json_date").empty();
+    $( "#json_date").append( date );
 
      for(i = 0; i< data.length; i++){
         var track = data[i];
 
-        $( "#json_date").empty();
-        $( "#json_date").append( date );
 
         $('#json_statusLateral_' + (i+1) ).attr("class", "");
         $('#json_statusLateral_' + (i+1) ).addClass("statusLateral " + translateCompareBg(track.compare));
         $('#json_icon_' + (i+1) ).attr("class", "");
         $('#json_icon_' + (i+1) ).addClass(translateCompare(track.compare));
 
-        $('#json_img_bg_' + (i+1) ).attr("src", "https://img.youtube.com/vi/"+track.id+"/0.jpg");
+
 
         $( "#json_artist_" + (i + 1)).empty();
         $( "#json_music_" + (i + 1)).empty();
@@ -254,6 +259,8 @@ function updateTopPage(data, date){
             $('#json_cover_' + (i+1) ).addClass("artCoverVideo");
         }
 
+        $('#json_img_bg_' + (i+1) ).attr("src", "https://img.youtube.com/vi/"+track.id+"/0.jpg");
+
         var lp = "-";
         if(track.lasPos != 0)
             lp = track.lasPos;
@@ -264,8 +271,6 @@ function updateTopPage(data, date){
         $( "#json_bw_" + (i + 1)).append( track.bestPos );
 
      }
-
-
 
 }
 
@@ -291,7 +296,7 @@ function updateTopData(type, number){
 
           	});
             console.log(">>>>>>>" + key)
-            updateTopPage(childData, key);
+            updateTopPage(childData, key, _DB_FIRST_KEY_GERAL_);
         });
     }
     else if(type == "funk"){
@@ -314,7 +319,7 @@ function updateTopData(type, number){
 
           	});
             console.log(">>>>>>>" + key)
-            updateTopPage(childData, key);
+            updateTopPage(childData, key, _DB_FIRST_KEY_FUNK_);
         });
     }
 
