@@ -9,20 +9,11 @@
   };
   firebase.initializeApp(config);
 
-//const dbRef = firebase.database().ref();
 
-
-//const topGeralRef = dbRef.child('top_music');
-//const topFunkRef = dbRef.child('top_funk');
-
-//var topFunkRef = firebase.database().ref("top_funk").limitToLast(1);
-
-
-var _DB_FIRST_KEY_GERAL_ = "27_2018-06-24";
-var _DB_FIRST_KEY_FUNK_ = "28_2018-06-27";
+  var _DB_FIRST_KEY_GERAL_ = "27_2018-06-24";
+  var _DB_FIRST_KEY_FUNK_ = "28_2018-06-27";
 
 function frontPage(){
-
 
     var topGeralRef = firebase.database().ref("top_music").limitToLast(1);
     var topFunkRef = firebase.database().ref("top_funk").limitToLast(1);
@@ -33,7 +24,7 @@ function frontPage(){
           var key = childSnapshot.key;
           // childData will be the actual contents of the child
           var childDataGeral = childSnapshot.val();
-    	  console.log(childDataGeral);
+    	  //console.log(childDataGeral);
 
           topFunkRef.once("value").then(function(snapshot) {
               snapshot.forEach(function(childSnapshot) {
@@ -41,7 +32,7 @@ function frontPage(){
                 var key = childSnapshot.key;
                 // childData will be the actual contents of the child
                 var childDataFunk = childSnapshot.val();
-              	console.log(childDataFunk);
+              	//console.log(childDataFunk);
 
               	updateDataPage(childDataGeral, childDataFunk);
             	}
@@ -53,10 +44,6 @@ function frontPage(){
     });
 }
 
-function randomBanner(topGeral, topFunk){
-
-
-}
 function updateDataPage(topGeral, topFunk){
     //console.log(topFunk);
     //Section 1
@@ -74,27 +61,28 @@ function updateDataPage(topGeral, topFunk){
             var topName = "Geral"
             var track = topGeral[random];
         }
+        if(track.img_url != "null"){
 
+    		$( "#json_header_number_" + i ).append( random+1 );
+    		$( "#json_header_top_" + i ).append( "Top " + topName);
+    		$( "#json_header_info_" + i ).append( track.artist + " - " + track.music);
 
+            //$('#json_header_number_' + i).html('<a href="http://www.google.com"></a>');
+            $('#header_text_' + i).click(function() {
+              	//window.location.replace(link);
 
-		$( "#json_header_number_" + i ).append( random+1 );
-		$( "#json_header_top_" + i ).append( "Top " + topName);
-		$( "#json_header_info_" + i ).append( track.artist + " - " + track.music);
+                if($(this).data("top") == "geral")
+                    window.location.href = "top.html";
+                else if($(this).data("top") == "funk")
+                    window.location.href = "topFunk.html";
 
-        //$('#json_header_number_' + i).html('<a href="http://www.google.com"></a>');
-        $('#header_text_' + i).click(function() {
-          	//window.location.replace(link);
+            });
 
-            if($(this).data("top") == "geral")
-                window.location.href = "top.html";
-            else if($(this).data("top") == "funk")
-                window.location.href = "topFunk.html";
-
-        });
-
-        $('#header_item_' + i).css("background-image", "url('"+track.img_url+"')");
+            $('#header_item_' + i).css("background-image", "url('"+track.img_url+"')");
+        }
+        else
+            i--;
 	}
-
 
     //Section 2
 
@@ -145,47 +133,7 @@ function updateDataPage(topGeral, topFunk){
         $( "#json_table_funk_melhor_pos_" + (i + 1)).append( track.bestPos );
 	}
 
-
 }
-
-/*
-const usersRef = dbRef.child('users');
-const userListUI = document.getElementById("userList");
-//console.log(usersRef);
-
-usersRef.on("value", function(snapshot) {
-  //console.log(snapshot.val());
-
-
-
-
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-});
-
-*/
-
-/*
-usersRef.on("child_added", snap => {
-
-	let user = snap.val();
-	console.log(user.name);
-
-	let $li = document.createElement("li");
-	$li.innerHTML = user.name;
-	$li.setAttribute("child-key", snap.key);
-	$li.addEventListener("click", userClicked)
-	userListUI.append($li);
-
-
-
-  	//$('body').show();
-
-
-});
-
-*/
-
 
 function translateCompare(str){
     if(str == "+")
@@ -210,19 +158,16 @@ function translateCompareBg(str){
 }
 
 function getStrDate(str){
-    //var months = {'01': 'January', '02': 'February', '06': 'JUN'}; //etc
-    //var month = months[mm];
     var month = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
     var date_str = str.split("_");
     var res = date_str[1].split("-");
-
 
     return (res[2]+" de "+month [parseInt(res[1]) - 1 ]+", "+res[0]);
 
 }
 
 function updateTopPage(data, date, firstKey){
-    //console.log(date);
+    console.log(date);
     //console.log(data);
 
     if(date == firstKey )
@@ -242,8 +187,6 @@ function updateTopPage(data, date, firstKey){
         $('#json_statusLateral_' + (i+1) ).addClass("statusLateral " + translateCompareBg(track.compare));
         $('#json_icon_' + (i+1) ).attr("class", "");
         $('#json_icon_' + (i+1) ).addClass(translateCompare(track.compare));
-
-
 
         $( "#json_artist_" + (i + 1)).empty();
         $( "#json_music_" + (i + 1)).empty();
@@ -275,7 +218,8 @@ function updateTopPage(data, date, firstKey){
 }
 
 function updateTopData(type, number){
-    console.log(number);
+    //console.log(type);
+    //console.log(number);
     if(type == "geral"){
         var topFunkRef = firebase.database().ref("top_music").limitToLast(number);
 
@@ -295,7 +239,7 @@ function updateTopData(type, number){
               }
 
           	});
-            console.log(">>>>>>>" + key)
+            //console.log(">>>>>>>" + key)
             updateTopPage(childData, key, _DB_FIRST_KEY_GERAL_);
         });
     }
@@ -318,47 +262,10 @@ function updateTopData(type, number){
               }
 
           	});
-            console.log(">>>>>>>" + key)
+            //console.log(">>>>>>>" + key)
             updateTopPage(childData, key, _DB_FIRST_KEY_FUNK_);
         });
     }
 
     return number;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function userClicked(e) {
-
-	var userID = e.target.getAttribute("child-key");
-
-	const userRef = dbRef.child('users/' + userID);
-	const userDetailUI = document.getElementById("userDetail");
-
-	userDetailUI.innerHTML = ""
-
-	userRef.on("child_added", snap => {
-
-
-		var $p = document.createElement("p");
-		$p.innerHTML = snap.key  + " - " +  snap.val()
-		userDetailUI.append($p);
-
-
-	});
-
-}
-*/

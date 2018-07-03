@@ -196,24 +196,25 @@
 
         number = updateTopData(_PAGE_TYPE_, number);
 
-        document.getElementById("datePrev").addEventListener("click", function(){
-            number = updateTopData("geral", number + 1);
+        function updateDateNav(value){
+            $( "#json_date").empty();
+            $( "#json_date").append( "..." );
+
+            number = updateTopData(_PAGE_TYPE_, value);
 
             if(number == 1)
                 document.getElementById("dateNext").style.display = "none";
             else
                 document.getElementById("dateNext").style.display = "block";
+        }
+
+        document.getElementById("datePrev").addEventListener("click", function(){
+            updateDateNav(number + 1);
 
         });
 
         document.getElementById("dateNext").addEventListener("click", function(){
-            number = updateTopData(_PAGE_TYPE_, number - 1);
-
-            if(number == 1)
-                document.getElementById("dateNext").style.display = "none";
-            else
-                document.getElementById("dateNext").style.display = "block";
-
+            updateDateNav(number - 1);
         });
 
     </script>
